@@ -74,9 +74,9 @@ public class TestMockito {
     @Test
     void test_for_String_locale() {
         Mockito.when(localizationService.locale(RUSSIA))
-                .thenReturn("Добро пожаловать");
+                .thenReturn(welcomeRussian);
         Mockito.when(localizationService.locale(USA))
-                .thenReturn("Welcome");
+                .thenReturn(welcomeEnglish);
     }
 
     // if MessageSenderImpl sends Russian text
