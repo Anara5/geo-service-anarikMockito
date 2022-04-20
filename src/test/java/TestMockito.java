@@ -63,10 +63,14 @@ public class TestMockito {
     void test_for_Location_byIp_ru() {
         Mockito.when(geoService.byIp(Mockito.startsWith("172.")))
                 .thenReturn(russia);
+        Mockito.when(geoService.byIp("172.0.32.11"))
+                .thenReturn(russia);
     }
 
     @Test
     void test_for_Location_byIp_en() {
+        Mockito.when(geoService.byIp(Mockito.startsWith("96.")))
+                .thenReturn(usa);
         Mockito.when(geoService.byIp("96.44.183.149"))
                 .thenReturn(usa);
     }
